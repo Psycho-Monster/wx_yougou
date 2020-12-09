@@ -1,0 +1,21 @@
+<view>
+  <Tabs tabList='{{tabList}}' bindgetCurrentIndex='getCurrentIndex'></Tabs>
+  <view class="collect-topbar">
+    <view class="collect-topbar-item active">全部</view>
+    <view class="collect-topbar-item">正在热卖</view>
+    <view class="collect-topbar-item">即将上线</view>
+  </view>
+  <view>
+    <view class="goods-item" wx:for="{{collectGoodsList}}" wx:key='goods_id'>
+      <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <view class="left">
+          <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:defaultImageUrl}}"></image>
+        </view>
+        <view class="right">
+          <view class="goods-info">{{item.goods_name}}</view>
+          <view class="goods-price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

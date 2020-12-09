@@ -1,0 +1,97 @@
+/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user-top {
+  height: 45vw;
+  // overflow: hidden;
+  background-color: var(--themeColor);
+  .login-button {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 15vw;
+  }
+  .avatar-background {
+    position: relative;
+    image {
+      height: 50vw;
+      filter: blur(10rpx);
+    }
+  }
+  .user-info {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    text-align: center;
+    image {
+      width: 150rpx;
+      border-radius: 50%;
+    }
+    .nickname {
+      color: #fff;
+      font-size: 30rpx;
+    }
+  }
+}
+.concern-wrapper {
+  display: flex;
+  background-color: #fff;
+  height: 150rpx;
+  margin-top: 50rpx;
+  .concern-item,
+  .concern-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .concern-item {
+    .concern-item-count {
+      color: var(--themeColor);
+    }
+  }
+}
+.order-wrapper {
+  margin-top: 50rpc;
+  border-bottom: 2px solid #eee;
+  .my-order {
+    height: 75rpx;
+    background-color: #fff;
+    line-height: 75rpx;
+    padding-left: 30rpx;
+  }
+}
+.pay-wrapper {
+  display: flex;
+  background-color: #fff;
+  height: 100rpx;
+  navigator {
+    width: 100%;
+    .pay-item {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .iconfont {
+        color: var(--themeColor);
+      }
+    }
+  }
+}
+.general-class {
+  height: 75rpx;
+  line-height: 75rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+  margin-top: 5rpx;
+}
+
+.contact-customer-service {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}

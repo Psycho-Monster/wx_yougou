@@ -1,0 +1,39 @@
+/**index.wxss**/
+.swiper-wrapper swiper {
+  height: 340rpx;
+}
+.swiper-wrapper image {
+  width: 100%;
+}
+.category-wrapper {
+  display: flex;
+}
+.category-wrapper navigator {
+  padding: 20rpx;
+  flex: 1;
+}
+.category-wrapper navigator image {
+  width: 100%;
+}
+.floor-wrapper .floor-title {
+  padding: 20rpx 0;
+}
+.floor-wrapper .floor-title image {
+  width: 100%;
+}
+.floor-wrapper .product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 250rpx);
+  grid-template-rows: 27.72711207vw 27.72711207vw;
+}
+.floor-wrapper .product-list navigator {
+  padding: 0 5rpx;
+}
+.floor-wrapper .product-list navigator:first-child {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.floor-wrapper .product-list navigator image {
+  width: 100%;
+  height: 100%;
+}

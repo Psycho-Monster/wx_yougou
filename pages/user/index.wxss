@@ -1,0 +1,93 @@
+/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user-top {
+  height: 45vw;
+  background-color: var(--themeColor);
+}
+.user-top .login-button {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 15vw;
+}
+.user-top .avatar-background {
+  position: relative;
+}
+.user-top .avatar-background image {
+  height: 50vw;
+  filter: blur(10rpx);
+}
+.user-top .user-info {
+  position: absolute;
+  left: 40%;
+  top: 10%;
+  text-align: center;
+}
+.user-top .user-info image {
+  width: 150rpx;
+  border-radius: 50%;
+}
+.user-top .user-info .nickname {
+  color: #fff;
+  font-size: 30rpx;
+}
+.concern-wrapper {
+  display: flex;
+  background-color: #fff;
+  height: 150rpx;
+  margin-top: 50rpx;
+}
+.concern-wrapper .concern-item,
+.concern-wrapper .concern-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.concern-wrapper .concern-item .concern-item-count {
+  color: var(--themeColor);
+}
+.order-wrapper {
+  margin-top: 50rpc;
+  border-bottom: 2px solid #eee;
+}
+.order-wrapper .my-order {
+  height: 75rpx;
+  background-color: #fff;
+  line-height: 75rpx;
+  padding-left: 30rpx;
+}
+.pay-wrapper {
+  display: flex;
+  background-color: #fff;
+  height: 100rpx;
+}
+.pay-wrapper navigator {
+  width: 100%;
+}
+.pay-wrapper navigator .pay-item {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pay-wrapper navigator .pay-item .iconfont {
+  color: var(--themeColor);
+}
+.general-class {
+  height: 75rpx;
+  line-height: 75rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+  margin-top: 5rpx;
+}
+.contact-customer-service {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}

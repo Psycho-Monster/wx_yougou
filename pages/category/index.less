@@ -1,0 +1,50 @@
+/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.category {
+  display: flex;
+  scroll-view {
+    height: calc(100vh - 90rpx);
+  }
+}
+.left {
+  flex: 2;
+  .left-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    font-size: 30rpx;
+    &.active {
+      color: red;
+    }
+  }
+}
+.right {
+  flex: 5;
+  .right-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    .prefix {
+      color: #ccc;
+      padding: 0 10rpx;
+    }
+  }
+  .right-view {
+    height: calc(100vh - 90rpx);
+  }
+  .right-list {
+    display: flex;
+    flex-wrap: wrap;
+    navigator {
+      text-align: center;
+      width: 33.333%;
+      image {
+        width: 50%;
+      }
+    }
+  }
+}

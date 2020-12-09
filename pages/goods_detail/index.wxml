@@ -1,0 +1,29 @@
+<!-- pages/goods_detail/index.wxml -->
+<view>
+  <swiper class="swiper-wrapper" indicator-dots circular autoplay>
+    <swiper-item wx:for="{{goodsDetail.pics}}" wx:key='pics_id' bindtap="previewImage"
+      data-current="{{item.pics_mid_url}}">
+      <image mode="widthFix" src="{{item.pics_mid_url}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="goods-price">￥{{goodsDetail.goods_price}}</view>
+  <view class="goods-middle">
+    <view class="goods-name">{{goodsDetail.goods_name}}</view>
+    <view class="goods-collect" bindtap="collectGoods">
+      <text class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}"></text>
+      <view>收藏</view>
+    </view>
+  </view>
+  <view class="goods-introduce">图文详情</view>
+  <rich-text nodes="{{goodsDetail.goods_introduce}}"></rich-text>
+  <van-goods-action>
+    <van-goods-action-icon icon="chat-o" text="客服" bind:click="onClickIcon" />
+    <navigator url="/pages/cart/index" open-type="switchTab">
+      <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
+    </navigator>
+    <van-goods-action-icon icon="star-o" text="收藏" bind:click="onClickIcon" />
+    <van-goods-action-button text="加入购物车" type="warning" bind:click="addCart" />
+    <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+  </van-goods-action>
+  <van-toast id="van-toast" />
+</view>

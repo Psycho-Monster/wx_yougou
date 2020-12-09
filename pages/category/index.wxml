@@ -1,0 +1,30 @@
+<!-- pages/category/index.wxml -->
+<view>
+  <SearchInput />
+  <view class="category">
+    <view class="left">
+      <scroll-view scroll-y>
+        <view data-index="{{index}}" bindtap="updateRightMenuList" class="left-item {{currentIndex===index?'active':''}}" wx:for="{{leftMenuList}}" wx:key='*this'>
+          {{item}}
+        </view>
+      </scroll-view>
+    </view>
+    <view class="right">
+      <scroll-view scroll-y scroll-top="{{scrollTop}}">
+        <view class="right-view" wx:for="{{rightMenuList}}" wx:key='cat_id'>
+          <view class="right-title">
+            <text>/</text>
+            <text>{{item.cat_name}}</text>
+            <text>/</text>
+          </view>
+          <view class="right-list">
+            <navigator url="/pages/goods_list/index?cid={{menu.cat_id}}" wx:for="{{item.children}}" wx:key='cat_id' wx:for-item='menu'>
+              <image mode="widthFix" src="{{menu.cat_icon}}"></image>
+              <view>{{menu.cat_name}}</view>
+            </navigator>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

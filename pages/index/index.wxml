@@ -1,0 +1,31 @@
+<!-- index.wxml -->
+<view>
+  <!-- 搜索组件 -->
+  <SearchInput />
+  <view class="swiper-wrapper">
+    <swiper autoplay circular indicator-dots>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <navigator url="{{item.navigator_url}}">
+          <image mode="widthFix" src="{{item.image_src}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="category-wrapper">
+    <navigator wx:for="{{categoryList}}" wx:key='name' url="/pages/category/index" open-type="switchTab">
+      <image mode="widthFix" src="{{item.image_src}}"></image>
+    </navigator>
+  </view>
+  <view class="floor-wrapper">
+    <view wx:for="{{floorList}}" wx:key='floor_title'>
+      <view class="floor-title">
+        <image mode="widthFix" src="{{item.floor_title.image_src}}"></image>
+      </view>
+      <view class="product-list">
+        <navigator wx:for="{{item.product_list}}" wx:key='name' wx:for-item='product' wx:for-index='index2' url="{{product.navigator_url}}">
+          <image src="{{product.image_src}}"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

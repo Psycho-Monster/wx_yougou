@@ -1,0 +1,20 @@
+<!-- pages/cart/index.wxml -->
+<view>
+  <view class="user-info">
+    <view class="user-detail">
+      <text>{{addressInfo.userName}}</text>
+      <text>{{addressInfo.telNumber}}</text>
+    </view>
+    <view>{{addressDetail}}</view>
+  </view>
+  <view>
+    <view class="card" wx:for="{{cart}}" wx:key='goods_id'>
+      <van-card num="{{item.num}}" price="{{item.goods_price}}" title="{{item.goods_name}}"
+        thumb="{{ item.goods_small_logo }}">
+      </van-card>
+    </view>
+    <van-submit-bar price="{{ totalPrice }}" button-text="结算({{payGoodsLength}})" bind:submit="submitOrder" tip="{{ true }}"
+      decimal-length='{{1}}'>
+    </van-submit-bar>
+  </view>
+</view>

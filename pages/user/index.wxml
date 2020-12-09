@@ -1,0 +1,90 @@
+<!-- pages/user/index.wxml -->
+<view>
+  <view class="user-top clearfix">
+    <view wx:if="{{!userInfo.avatarUrl}}">
+      <button class="login-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="login">
+        登录
+      </button>
+    </view>
+    <view wx:else>
+      <view>
+        <view class="avatar-background">
+          <image src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="user-info">
+          <view>
+            <image src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+          </view>
+          <text class="nickname">{{userInfo.nickName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="concern-wrapper">
+    <view class="concern-item">
+      <view class="concern-item-count">0</view>
+      <view>收藏的店铺</view>
+    </view>
+    <view class="concern-item">
+      <navigator url="/pages/collect/index" class="concern-nav">
+        <view class="concern-item-count">{{collectGoodsListCount}}</view>
+        <view>收藏的商品</view>
+      </navigator>
+    </view> 
+    <view class="concern-item">
+      <view class="concern-item-count">0</view>
+      <view>关注的商品</view>
+    </view>
+    <view class="concern-item">
+      <view class="concern-item-count">0</view>
+      <view>我的足迹</view>
+    </view>
+  </view>
+  <view class="order-wrapper">
+    <view class="my-order">
+      <text>我的订单</text>
+    </view>
+  </view>
+  <view class="pay-wrapper">
+    <navigator url="/pages/order/index?type=1">
+      <view class="pay-item">
+        <view class="iconfont icon-ding_dan"></view>
+        <text>全部订单</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/order/index?type=2">
+      <view class="pay-item">
+        <view class="iconfont icon-fukuantongzhi"></view>
+        <text>待付款</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/order/index?type=3">
+      <view class="pay-item">
+        <view class="iconfont icon-receipt-address"></view>
+        <text>待发货</text>
+      </view>
+    </navigator>
+    <navigator>
+      <view class="pay-item">
+        <view class="iconfont icon-tuihuotuikuan_dianpu"></view>
+        <text>退款/退货</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="general-class">
+    <text>收货地址管理</text>
+  </view>
+  <view class="general-class contact-customer-service">
+    <text>联系客服</text>
+    <text>400-518-4000</text>
+  </view>
+  <view class="general-class">
+    <text>意见反馈</text>
+  </view>
+  <view class="general-class">
+    <text>关于我们</text>
+  </view>
+  <view class="general-class">
+    <text>把应用推荐给其他人</text>
+  </view>
+</view>

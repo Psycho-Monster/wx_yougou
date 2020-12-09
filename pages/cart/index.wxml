@@ -1,0 +1,35 @@
+<!-- pages/cart/index.wxml -->
+<view>
+  <view class="address-button" wx:if="{{!addressInfo.userName}}">
+    <van-button plain type="primary" bindtap="checkAddressAuth">获取收货地址</van-button>
+  </view>
+  <view wx:else class="user-info">
+    <view class="user-detail">
+      <text>{{addressInfo.userName}}</text>
+      <text>{{addressInfo.telNumber}}</text>
+    </view>
+    <view>{{addressDetail}}</view>
+  </view>
+  <view>
+    <view class="card" wx:for="{{cart}}" wx:key='goods_id'>
+      <checkbox-group class="checkbox-item">
+        <checkbox checked="{{item.isChecked}}" bindtap="checkGoods" data-index="{{index}}"></checkbox>
+      </checkbox-group>
+      <van-card num="{{item.num}}" price="{{item.goods_price}}" title="{{item.goods_name}}"
+        thumb="{{ item.goods_small_logo }}">
+        <view slot="footer">
+          <van-button size="mini" round bindtap="changeGoodsNum" data-type='decrement' data-index="{{index}}">-
+          </van-button>
+          <van-button size="mini" round bindtap="changeGoodsNum" data-type="increment" data-index="{{index}}">+
+          </van-button>
+        </view>
+      </van-card>
+    </view>
+    <van-submit-bar price="{{ totalPrice }}" button-text="结算({{payGoodsLength}})" bind:submit="submitOrder" tip="{{ true }}"
+      decimal-length='{{1}}'>
+      <checkbox-group>
+        <checkbox checked="{{checkedAll}}" bindtap="checkAllGoods">全选</checkbox>
+      </checkbox-group>
+    </van-submit-bar>
+  </view>
+</view>

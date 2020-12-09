@@ -1,0 +1,50 @@
+/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.category {
+  display: flex;
+}
+.category scroll-view {
+  height: calc(100vh - 90rpx);
+}
+.left {
+  flex: 2;
+}
+.left .left-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  font-size: 30rpx;
+}
+.left .left-item.active {
+  color: red;
+}
+.right {
+  flex: 5;
+}
+.right .right-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+}
+.right .right-title .prefix {
+  color: #ccc;
+  padding: 0 10rpx;
+}
+.right .right-view {
+  height: calc(100vh - 90rpx);
+}
+.right .right-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right .right-list navigator {
+  text-align: center;
+  width: 33.333%;
+}
+.right .right-list navigator image {
+  width: 50%;
+}

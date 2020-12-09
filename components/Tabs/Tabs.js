@@ -1,0 +1,46 @@
+// components/Tabs/Tabs.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    tabList:{
+      type:Array,
+      value:[]
+    },
+    orderType:{
+      type:Number,
+      value:0
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    currentIndex:0
+  },
+  lifetimes:{
+    ready(){
+      // 在组件在视图层布局完成后执行
+      // 目的是为了在个人中心点击不同的订单界面能正确的显示tabbar对应的内容
+      const {orderType}=this.data
+      this.setData({
+        currentIndex:orderType
+      })
+    }
+  },
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    toggleTabItem(e){
+      console.log('触发了222')
+      const currentIndex=e.currentTarget.dataset.index
+      this.triggerEvent('getCurrentIndex',{currentIndex})
+      this.setData({
+        currentIndex
+      })
+    }
+  }
+})

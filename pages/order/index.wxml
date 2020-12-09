@@ -1,0 +1,24 @@
+<!-- pages/order/index.wxml -->
+<view>
+  <Tabs tabList='{{tabList}}' bindgetCurrentIndex='getCurrentIndex' orderType='{{orderType}}'>
+    <block wx:if="{{currentIndex===0}}">
+      <view wx:for="{{orderList}}" wx:for-item='order' wx:key='order_id' class="order-item">
+        <view class="order-number">
+          <text>订单编号</text>
+          <text>{{order.order_number}}</text>
+        </view>
+        <view class="order-price">
+          <text>订单价格</text>
+          <text class="price-detail">￥{{order.order_price}}</text>
+        </view>
+        <view class="order-time">
+          <text>订单日期</text>
+          <text>{{order.create_time}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{currentIndex===1}}">待付款</block>
+    <block wx:if="{{currentIndex===2}}">待发货</block>
+    <block wx:if="{{currentIndex===3}}">退款/退货</block>
+  </Tabs>
+</view>

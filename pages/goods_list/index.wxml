@@ -1,0 +1,21 @@
+<!-- pages/goods_list/index.wxml -->
+<view>
+  <SearchInput />
+  <Tabs tabList='{{tabList}}' bindgetCurrentIndex='getCurrentIndex'>
+    <block wx:if="{{currentIndex===0}}">
+      <view class="goods-item" wx:for="{{goodsList}}" wx:key='goods_id'>
+        <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+          <view class="left">
+            <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:defaultImageUrl}}"></image>
+          </view>
+          <view class="right">
+            <view class="goods-info">{{item.goods_name}}</view>
+            <view class="goods-price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:elif="{{currentIndex===1}}">1</block>
+    <block wx:else="{{currentIndex===2}}">2</block>
+  </Tabs>
+</view>

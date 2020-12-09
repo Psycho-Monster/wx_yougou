@@ -1,0 +1,16 @@
+.order-item {
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.order-item .order-number,
+.order-item .order-price,
+.order-item .order-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10rpx;
+  color: #727272;
+}
+.order-item .order-price .price-detail {
+  color: var(--themeColor);
+}

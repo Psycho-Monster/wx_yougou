@@ -1,0 +1,24 @@
+/* pages/cart/index.wxss */
+.address-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20rpx;
+}
+.user-info {
+  padding: 20rpx;
+}
+.user-info .user-detail {
+  display: flex;
+  justify-content: space-between;
+}
+.card{
+  display: flex;
+  padding-top: 20rpx;
+}
+.card van-card{
+  flex: 1;
+}
+.card .checkbox-item{
+  align-self: center;
+}
